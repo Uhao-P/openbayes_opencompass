@@ -40,6 +40,14 @@ def parse_args():
     parser.add_argument('--models', nargs='+', help='', default=None)
     parser.add_argument('--datasets', nargs='+', help='', default=None)
     parser.add_argument('--summarizer', help='', default=None)
+    #新增参数
+    parser.add_argument('--model-path', help='', default='/input0/')
+    parser.add_argument('--model-name', help='', default='Meta-Llama-3-8B-Instruct')
+    parser.add_argument('--url', help='', default='http://localhost:8080/v1/chat/completions')
+    parser.add_argument('--max-model-len', help='', default=32768,type = int)
+    parser.add_argument('--max-out-len-carbon', help='', default=8192,type = int)
+    parser.add_argument('--repetition-penalty', help='', default=1.2,type = float)
+    parser.add_argument('--temperature', help='', default=0.2,type = float)
     # add general args
     parser.add_argument('--debug',
                         help='Debug mode, in which scheduler will run tasks '
@@ -103,7 +111,7 @@ def parse_args():
                         'Will be overrideen by the "max_num_workers" argument '
                         'in the config.',
                         type=int,
-                        default=1)
+                        default=16)
     parser.add_argument('--max-workers-per-gpu',
                         help='Max task to run in parallel on one GPU. '
                         'It will only be used in the local runner.',
@@ -114,7 +122,7 @@ def parse_args():
         help='Number of retries if the job failed when using slurm or dlc. '
         'Will be overrideen by the "retry" argument in the config.',
         type=int,
-        default=2)
+        default=10)
     parser.add_argument(
         '--dump-eval-details',
         help='Whether to dump the evaluation details, including the '

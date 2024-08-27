@@ -30,7 +30,7 @@ LongBench_gov_report_datasets = [
     dict(
         type=LongBenchgov_reportDataset,
         abbr='LongBench_gov_report',
-        path='THUDM/LongBench',
+        path='/output/opencompass/data/LongBench/gov_report.jsonl',
         name='gov_report',
         reader_cfg=LongBench_gov_report_reader_cfg,
         infer_cfg=LongBench_gov_report_infer_cfg,

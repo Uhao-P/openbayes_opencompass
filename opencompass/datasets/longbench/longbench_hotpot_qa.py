@@ -1,7 +1,6 @@
 from datasets import Dataset, load_dataset
 
 from opencompass.registry import LOAD_DATASET
-from opencompass.utils import get_data_path
 
 from ..base import BaseDataset
 
@@ -11,10 +10,7 @@ class LongBenchhotpotqaDataset(BaseDataset):
 
     @staticmethod
     def load(**kwargs):
-        if 'data_files' in kwargs:
-            kwargs['data_files'] = get_data_path(kwargs['data_files'],
-                                                 local_mode=True)
-        dataset = load_dataset(**kwargs)
+        dataset = load_dataset('json', data_files={"test": kwargs['path']})
         split = 'test'
         raw_data = []
         for i in range(len(dataset[split])):

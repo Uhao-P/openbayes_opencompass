@@ -31,7 +31,7 @@ LongBench_lsht_datasets = [
     dict(
         type=LongBenchlshtDataset,
         abbr='LongBench_lsht',
-        path='THUDM/LongBench',
+        path='/output/opencompass/data/LongBench/lsht.jsonl',
         name='lsht',
         reader_cfg=LongBench_lsht_reader_cfg,
         infer_cfg=LongBench_lsht_infer_cfg,

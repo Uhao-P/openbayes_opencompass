@@ -30,7 +30,7 @@ LongBench_repobench_datasets = [
     dict(
         type=LongBenchrepobenchDataset,
         abbr='LongBench_repobench-p',
-        path='THUDM/LongBench',
+        path='/output/opencompass/data/LongBench/repobench-p.jsonl',
         name='repobench-p',
         reader_cfg=LongBench_repobench_reader_cfg,
         infer_cfg=LongBench_repobench_infer_cfg,

@@ -94,6 +94,15 @@ def get_config_from_arg(args) -> Config:
     if args.config:
         config = Config.fromfile(args.config, format_python_code=False)
         config = try_fill_in_custom_cfgs(config)
+        #为model新增参数
+        config['models'][0]['abbr'] = args.model_name
+        config['models'][0]['path'] = args.model_path
+        config['models'][0]['openai_api_base'] = args.url
+        config['models'][0]['max_model_len'] = args.max_model_len
+        config['models'][0]['max_out_len'] = args.max_out_len_carbon
+        config['models'][0]['repetition_penalty'] = args.repetition_penalty
+        config['models'][0]['temperature'] = args.temperature
+        config['models'][0]['retry'] = args.retry
         # set infer accelerator if needed
         if args.accelerator in ['vllm', 'lmdeploy']:
             config['models'] = change_accelerator(config['models'], args.accelerator)
@@ -168,6 +177,14 @@ def get_config_from_arg(args) -> Config:
             cfg = Config.fromfile(model[1])
             if 'models' not in cfg:
                 raise ValueError(f'Config file {model[1]} does not contain "models" field')
+            cfg['models'][0]['abbr'] = args.model_name
+            cfg['models'][0]['path'] = args.model_path
+            cfg['models'][0]['openai_api_base'] = args.url
+            cfg['models'][0]['max_model_len'] = args.max_model_len
+            cfg['models'][0]['max_out_len'] = args.max_out_len
+            cfg['models'][0]['repetition_penalty'] = args.repetition_penalty
+            cfg['models'][0]['temperature'] = args.temperature
+            cfg['models'][0]['retry'] = args.retry
             models += cfg['models']
     else:
         if args.hf_type == 'chat':

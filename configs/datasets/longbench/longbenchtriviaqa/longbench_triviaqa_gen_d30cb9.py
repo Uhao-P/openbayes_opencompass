@@ -31,7 +31,7 @@ LongBench_triviaqa_datasets = [
     dict(
         type=LongBenchtriviaqaDataset,
         abbr='LongBench_triviaqa',
-        path='THUDM/LongBench',
+        path='/output/opencompass/data/LongBench/triviaqa.jsonl',
         name='triviaqa',
         reader_cfg=LongBench_triviaqa_reader_cfg,
         infer_cfg=LongBench_triviaqa_infer_cfg,

@@ -30,7 +30,7 @@ LongBench_qasper_datasets = [
     dict(
         type=LongBenchqasperDataset,
         abbr='LongBench_qasper',
-        path='THUDM/LongBench',
+        path='/output/opencompass/data/LongBench/qasper.jsonl',
         name='qasper',
         reader_cfg=LongBench_qasper_reader_cfg,
         infer_cfg=LongBench_qasper_infer_cfg,
