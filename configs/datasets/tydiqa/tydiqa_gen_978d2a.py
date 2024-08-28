@@ -52,7 +52,7 @@ for _lang in langs:
     tydiqa_datasets.append(
         dict(abbr=f'tydiqa-goldp_{_lang}',
             type=TydiQADataset,
-            path='opencompass/tydiqa',
+            path='./data/tydiqa/',
             lang=_lang,
             reader_cfg=tydiqa_reader_cfg,
             infer_cfg=tydiqa_infer_cfg,

@@ -16,6 +16,7 @@ def get_data_path(dataset_id: str, local_mode: bool = False):
         local_mode (bool): whether to use local path or
             ModelScope/HuggignFace repo
     """
+    return dataset_id
     # update the path with CACHE_DIR
     cache_dir = os.environ.get('COMPASS_DATA_CACHE', '')
 

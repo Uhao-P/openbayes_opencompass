@@ -37,7 +37,7 @@ hellaswag_datasets = [
     dict(
         abbr='hellaswag',
         type=HellaswagDataset_V2,
-        path='opencompass/hellaswag',
+        path='./data/hellaswag/hellaswag.jsonl',
         reader_cfg=hellaswag_reader_cfg,
         infer_cfg=hellaswag_infer_cfg,
         eval_cfg=hellaswag_eval_cfg)

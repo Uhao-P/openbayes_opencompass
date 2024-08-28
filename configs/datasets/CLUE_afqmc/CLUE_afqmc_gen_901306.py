@@ -35,7 +35,7 @@ afqmc_datasets = [
     dict(
         abbr='afqmc-dev',
         type=AFQMCDatasetV2,
-        path='opencompass/afqmc-dev',
+        path='./data/CLUE/AFQMC/dev.json',
         reader_cfg=afqmc_reader_cfg,
         infer_cfg=afqmc_infer_cfg,
         eval_cfg=afqmc_eval_cfg,
